@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0%;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: azure;
+}
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  border: 1px solid black;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.button {
+  background-color: green;
+  color: white;
+  padding: 2px;
+  border-radius: 4px;
+}
+.prods {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  background-image: url("https://i.pinimg.com/564x/f1/ca/4a/f1ca4a2b4143a4ce875b20261bc91a4c.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  gap: 10px;
+  /* border: 1px solid magenta; */
+}
+.item {
+  display: flex;
+  margin: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  gap: 5px;
+  border-radius: 5px;
+  /* margin-bottom: 10px; */
+  background-color: white;
+  width: 20%;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.item img {
+  position: relative;
+  width: 95%;
+}
+.comm {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.delete {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 18px;
+}
+.edit {
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 18px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  margin-top: 20px;
+}
+.icon a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bolder;
+
+  color: black;
+}
+.icon ion-icon {
+  height: 80px;
+  width: 50px;
+}
+.main1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cart {
+  display: flex;
+  gap: 10px;
+}
