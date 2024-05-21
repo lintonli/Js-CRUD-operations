@@ -1,16 +1,10 @@
 {
   "Users": [
     {
-      "id": "790d",
-      "userName": "",
-      "userEmail": "",
-      "userPassword": ""
-    },
-    {
-      "id": "7a93",
-      "userName": "Linton Maina",
-      "userEmail": "lintonmw@ueab.ac.ke",
-      "userPassword": ""
+      "id": "3d02",
+      "userName": "Nelly",
+      "userEmail": "nelly@gmail.com",
+      "userPassword": "Nelly@123"
     }
   ]
 }
