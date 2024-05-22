@@ -3,7 +3,7 @@ const userName = document.getElementById("name");
 const userEmail = document.getElementById("email");
 const userPassword = document.getElementById("password");
 const signbtn = document.getElementById("sbtn");
-const lbtn = document.getElementById("lbtn");
+// const lbtn = document.getElementById("lbtn");
 
 function validateInput(userName, userPassword, userEmail) {
   const usernameValid = userName.length >= 3; // Username should be at least 3 characters
@@ -82,44 +82,3 @@ async function getUser(userName) {
   }
   return val;
 }
-
-async function logUser() {
-  // const userNameValue = userName.value;
-  // const userPasswordValue = userPassword.value;
-
-  console.log("login success");
-  // let user = await fetch(baseUrl + userNameValue);
-  // let val = await user.json();
-
-  // if (val.userName === newUser.userName) {
-  //   console.log("Username already taken kindly choose another");
-  // }
-  // if (!val) {
-  //   alert("user does not exist");
-  // }
-  // if (
-  //   login.userPassword === userPasswordValue &&
-  //   login.userPassword === userNameValue
-  // ) {
-  //   alert("login successful");
-  //   window.location.href = "home.html";
-  // } else {
-  //   alert("wrong user credentials");
-  // }
-
-  // const login = await getUser();
-
-  // if (login.length === 0) {
-  //   alert("user not found");
-  // }
-  // if (
-  //   login.userPassword === userPasswordValue &&
-  //   login.userPassword === userNameValue
-  // ) {
-  //   alert("login successful");
-  //   window.location.href = "home.html";
-  // } else {
-  //   alert("wrong user credentials");
-  // }
-}
-lbtn.addEventListener("click", logUser);
