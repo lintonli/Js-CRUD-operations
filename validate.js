@@ -2,7 +2,7 @@ const baseUrl = "http://localhost:3000/Users";
 const userName = document.getElementById("name");
 const userEmail = document.getElementById("email");
 const userPassword = document.getElementById("password");
-const sbtn = document.getElementById("sbtn");
+const signbtn = document.getElementById("sbtn");
 const lbtn = document.getElementById("lbtn");
 
 function validateInput(userName, userPassword, userEmail) {
@@ -50,7 +50,7 @@ async function regUser(e) {
     // const response = await fetch(baseUrl + "?userName=" + newUser.userName);
     // const users = await response.json();
     getUser();
-
+    //remember users is not defined
     // if (users.length > 0) {
     //   alert("Username already exists. Please choose a different username.");
     //   return;
@@ -61,19 +61,20 @@ async function regUser(e) {
       body: JSON.stringify(newUser),
     });
     console.log(newUser);
-
+    alert("successfully registered");
     window.location.href = "login.html";
   }
 }
-sbtn.addEventListener("click", regUser);
+signbtn.addEventListener("click", regUser);
 
 //get all users from our database
 async function getUser() {
   await fetch(baseUrl, await users.json());
 }
 
-async function getUser(id) {
-  let user = await fetch(baseUrl + id);
+async function getUser(userName) {
+  // let user = await fetch(`${baseUrl}?userName=${userName}`);
+  let user = await fetch(baseUrl + userName);
   let val = await user.json();
 
   if (val.userName === newUser.userName) {
@@ -82,7 +83,43 @@ async function getUser(id) {
   return val;
 }
 
-// async function logUser(val) {
-//   userName.value = val.userName;
-//   userPassword.value = val.userPassword;
-// }
+async function logUser() {
+  // const userNameValue = userName.value;
+  // const userPasswordValue = userPassword.value;
+
+  console.log("login success");
+  // let user = await fetch(baseUrl + userNameValue);
+  // let val = await user.json();
+
+  // if (val.userName === newUser.userName) {
+  //   console.log("Username already taken kindly choose another");
+  // }
+  // if (!val) {
+  //   alert("user does not exist");
+  // }
+  // if (
+  //   login.userPassword === userPasswordValue &&
+  //   login.userPassword === userNameValue
+  // ) {
+  //   alert("login successful");
+  //   window.location.href = "home.html";
+  // } else {
+  //   alert("wrong user credentials");
+  // }
+
+  // const login = await getUser();
+
+  // if (login.length === 0) {
+  //   alert("user not found");
+  // }
+  // if (
+  //   login.userPassword === userPasswordValue &&
+  //   login.userPassword === userNameValue
+  // ) {
+  //   alert("login successful");
+  //   window.location.href = "home.html";
+  // } else {
+  //   alert("wrong user credentials");
+  // }
+}
+lbtn.addEventListener("click", logUser);

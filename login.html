@@ -8,25 +8,16 @@
   </head>
   <body>
     <div class="main">
-      <form action="submit" method="post">
-        <label for="username">User Name</label>
-        <input type="text" name="name" id="name" />
-        <label for="password">password</label>
-        <input type="password" name="password" id="password" />
-        <a href="home.html">
-          <button
-            type="submit"
-            class="button"
-            id="lbtn"
-            onclick=" location.href='home.html'"
-          >
-            LOGIN
-          </button>
-        </a>
-
-        <a href="index.html">HOME</a>
-        <a href="signup.html">Sign up</a>
-      </form>
+      <!-- <form action="submit" method="post"> -->
+      <label for="username">User Name</label>
+      <input type="text" name="name" id="name" />
+      <label for="password">password</label>
+      <input type="password" name="password" id="password" autocomplete="off" />
+      <button class="button" id="lbtn">LOGIN</button>
+      <a href="index.html">HOME</a>
+      <a href="signup.html">Sign up</a>
+      <!-- </form> -->
     </div>
+    <script src="validate.js" defer></script>
   </body>
 </html>

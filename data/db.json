@@ -5,6 +5,30 @@
       "userName": "Nelly",
       "userEmail": "nelly@gmail.com",
       "userPassword": "Nelly@123"
+    },
+    {
+      "id": "e79a",
+      "userName": "edimund",
+      "userEmail": "linton@gmail.com",
+      "userPassword": "Edi@123"
+    },
+    {
+      "id": "e15b",
+      "userName": "jona",
+      "userEmail": "jona@gmail.com",
+      "userPassword": "Jona@123"
+    },
+    {
+      "id": "71a4",
+      "userName": "joe",
+      "userEmail": "joe@gmail.com",
+      "userPassword": "Joe@123"
+    },
+    {
+      "id": "b211",
+      "userName": "Maina",
+      "userEmail": "lintonli162@gmail.com",
+      "userPassword": "Maish@123"
     }
   ]
 }
