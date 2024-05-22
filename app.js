@@ -12,6 +12,18 @@ const productQuantity = document.getElementById("Pquantity");
 const button = document.getElementById("btn");
 const btn = document.getElementsByClassName("edit");
 
+
+function getProducts(){
+  fetch(productUrl).then(
+    res => res.json()
+  ).then (list => {
+    displayProduct(list)
+  })
+  // console.log(list);
+}
+
+getProducts()
+
 async function addProduct() {
   if (!isEdit) {
     // console.log("add");
@@ -44,35 +56,42 @@ async function getProducts() {
   displayProduct(list);
 }
 getProducts();
+
+
 function displayProduct(list) {
   //   console.log("products (display products) -> ", Product);
-  maindiv.innerHTML = "";
+  let html = "";
   if (list.length === 0) {
-    maindiv.innerHTML = "No Products found";
+    html = "No Products found";
   } else {
     list.forEach((prod) => {
-      const prodElement = document.createElement("div");
-      prodElement.className = "item";
-      prodElement.innerHTML = `
-        <h1>${prod.Pname}</h1>
+      // const prodElement = document.createElement("div");
+      // prodElement.className = "item";
+      // prodElement.innerHTML = 
+      html+=
+      ` <div class="comm">
+        <h1>Product: ${prod.Pname}</h1>
         <img src="${prod.imageurl}" alt="">
-        <h3>${prod.Pprice}</h3>
+        <h3>Price: ${prod.Pprice}</h3>
 
-        <p>${prod.Pquantity}</p>
-<div class="comm">
-         <button class="delete" onclick="deleteProduct(${prod.id})">Delete</button>
-         <button class ="edit" onclick="editProduct(${prod.id})">Edit</button>
+        <p>Quantity: ${prod.Pquantity}</p>
+
+         <button class="delete" onclick="deleteProduct('${prod.id}')">Delete</button>
+         <button class ="edit" onclick="editProduct('${prod.id}')">Edit</button>
+         <button class ="cart" onclick="addCart('${prod.id}')">Add to Cart</button>
          </div>
-         <button class ="cart" onclick="addCart(${prod.id})">Add to Cart</button>
         `;
       // maindiv.appendChild(prodElement);
+      maindiv.innerHTML = html 
     });
   }
 }
 
-function editProduct(product) {
+async function editProduct(id) {
   // const product = Product.find((prod) => prod.id === productId);
   //   console.log("edit product -> ", product);
+  let response = await fetch(productUrl + id);
+  let prod = await response.json();
 
   productname.value = product.Pname;
   imageUrl.value = product.imageurl;
@@ -81,13 +100,19 @@ function editProduct(product) {
   button.textContent = "Update";
   editProductId = product;
   isEdit = true;
+  console.log(product);
 }
 
 async function updateProduct(id) {
   let response = await fetch(productUrl + id);
   let prod = await response.json();
+
+
+  // prepopulate(prod)
+  console.log(prod);
   if (prod.id) {
     editProduct(product);
+    console.log(product);
 
     btn.addEventListener("click", async () => {
       if (btn.textContent === "update") {
@@ -103,11 +128,23 @@ async function updateProduct(id) {
     });
   }
 
-  isEdit = false;
-  //   console.log("products updated (after)", Product);
+  // isEdit = false;
+  // //   console.log("products updated (after)", Product);
 
   resetForm();
 }
+
+// function prepopulate(prod) {
+// //for prepopulating 
+//     Pname.value = prod.Pname,
+//     Pprice.value = prod.Pprice,
+//     Pquantity.value = prod.Pquantity,
+//     imageurl.value =  prod.imageUrl,
+//     id = prod.id
+//     btn.textContent = "Edit"
+// }
+
+
 async function sendRequest({ id, ...updatedProduct }) {
   await fetch(productUrl + id, {
     method: "PUT",
@@ -120,8 +157,8 @@ async function deleteProduct(id) {
   });
 }
 
-function addCart(ProductId, quantity) {
-  const Prod = Product.find((item) => item.id === ProductId);
+function addCart(ProductId, quantity,product) {
+  const Prod = product.find((item) => item.id === ProductId);
   //   console.log("Product (add to cart) -> ", Product);
   if (!Prod || Prod.Pquantity < quantity) {
     console.log("Not enough stock");
