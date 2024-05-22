@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDDY"S PLACE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="product-content">
+        <div class="icon">
+          <a href="cart.html">cart</a>
+          <ion-icon name="cart-outline"></ion-icon>
+        </div>
+
+        <div class="form">
+          <label for="Name">Product Name</label>
+          <input type="text" name="Pname" id="Pname" />
+          <label for="image-url">Image</label>
+          <input type="text" name="image-url" id="imageurl" />
+
+          <label for="Price">Price</label>
+          <input type="number" name="Pprice" id="Pprice" />
+          <label for="Quantity">Quantity</label>
+          <input type="number" name="Pquantity" id="Pquantity" />
+
+          <button class="button" id="btn">Add Product</button>
+        </div>
+      </div>
+
+      <div class="prods"></div>
+      <!-- <div class="cart"></div> -->
+    </div>
+    <script src="app.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

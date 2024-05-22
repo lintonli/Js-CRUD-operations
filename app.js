@@ -111,7 +111,7 @@ function deleteProduct(productId) {
 function addCart(ProductId, quantity) {
   const Prod = Product.find((item) => item.id === ProductId);
   //   console.log("Product (add to cart) -> ", Product);
-  if (!Prod || Prod.quantity < quantity) {
+  if (!Prod || Prod.Pquantity < quantity) {
     console.log("Not enough stock");
   }
   if (Prod) {

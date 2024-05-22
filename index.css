@@ -1,0 +1,46 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.container1 {
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  /* border: 1px solid blue; */
+}
+
+.nav {
+  height: 30%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sign ul {
+  display: flex;
+  gap: 10px;
+  list-style-type: none;
+}
+.sign ul li a {
+  text-decoration: none;
+  color: black;
+}
+.sign ul li a :hover {
+  color: blue;
+}
+.content {
+  height: 100%;
+  text-align: center;
+  /* border: 1px solid magenta; */
+  background-image: url(https://cdn.pixabay.com/photo/2016/06/03/17/35/shoes-1433925_640.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* align-items: center; */
+  display: flex;
+  justify-content: flex-end;
+}
